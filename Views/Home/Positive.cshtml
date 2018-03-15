@@ -1,0 +1,38 @@
+﻿@model Zirve.Models.hasta
+
+@{
+    ViewBag.Title = "Positive";
+}
+<style>
+    body {
+        background-position: 50% 30%;
+        background-size: cover;
+    }
+</style>
+<body background="~/Content/ONGXW50.jpg" >
+<link href="~/Content/cta.css" rel="stylesheet" />
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div class="container">
+    <div class="col-sm-12 col-md-8 col-md-offset-2">
+        <div class="bs-calltoaction bs-calltoaction-success">
+            <div class="row">
+                <div class="col-md-9 cta-contents">
+                    <h1 class="cta-title">@ViewBag.Message</h1>
+                    <div class="cta-desc">
+                        <p>@ViewBag.Data % ihtimalle readmisyon olmayacak. </p>
+                    </div>
+                </div>
+                <div class="col-md-3 cta-button">
+                    <a href="Index" class="btn btn-lg btn-block btn-success">Yeni Sorgu</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</body>
+
+

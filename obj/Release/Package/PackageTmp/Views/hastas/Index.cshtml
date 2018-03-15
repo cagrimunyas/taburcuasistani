@@ -1,0 +1,133 @@
+﻿@model IEnumerable<Zirve.Models.hasta>
+@ViewData["message"];
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/Site.css" rel="stylesheet" />
+<h2>Daha Öceki Sorgular</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.race)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.admisson_source_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.admission_type_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_emergency)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_inpatient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_outpatient)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.medical_specialty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_medications)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.num_procedures)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.number_diagnoses)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.diag_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.time_in_hospital)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.discharge_disposition_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.readmitted_dttm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scored_Labels)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scored_Probabilities)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.race)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.admisson_source_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.admission_type_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number_emergency)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number_inpatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number_outpatient)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.medical_specialty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_medications)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.num_procedures)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.number_diagnoses)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.diag_1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.time_in_hospital)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.discharge_disposition_id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Scored_Labels)
+            </td>
+
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+            </td>
+        </tr>
+    }
+
+</table>

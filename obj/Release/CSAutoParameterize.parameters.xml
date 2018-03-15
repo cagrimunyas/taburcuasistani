@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:hastadbserver.database.windows.net,1433;Initial Catalog=hastaDB;Persist Security Info=False;User ID=cagrimunyas@hastadbserver;Password=12345789Salto;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-camuny\\source\\repos\\Zirve\\Zirve\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-camuny\\source\\repos\\Zirve\\Zirve\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="hastaDBContext-Web.config Connection String" description="hastaDBContext Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:hastadbserver.database.windows.net,1433;Initial Catalog=hastaDB;Persist Security Info=False;User ID=cagrimunyas@hastadbserver;Password=12345789Salto;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-camuny\\source\\repos\\Zirve\\Zirve\\obj\\Release\\Package\\PackageTmp\\Views\\Web\.config$" match="/configuration/connectionStrings/add[@name='hastaDBContext']/@connectionString" />
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\t-camuny\\source\\repos\\Zirve\\Zirve\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='hastaDBContext']/@connectionString" />
+  </parameter>
+</parameters>

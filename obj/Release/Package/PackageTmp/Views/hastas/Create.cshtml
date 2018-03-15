@@ -1,0 +1,206 @@
+﻿@model Zirve.Models.hasta
+<script src="~/Scripts/site.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+@ViewData["message"];
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="container">
+        <div class="stepwizard">
+            <div class="stepwizard-row setup-panel">
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-1" type="button" class="btn btn-success btn-circle">1</a>
+                    <p><small>Hastahaneye Giriş</small></p>
+                </div>
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+                    <p><small>Tedavi Test </small></p>
+                </div>
+                <div class="stepwizard-step col-xs-4">
+                    <a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+                    <p><small>Taburcu Olma</small></p>
+                </div>
+            </div>
+        </div>
+
+        <form role="form">
+            <div class="panel panel-primary setup-content" id="step-1">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Hasta Bilgileri </h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label id="age" class="control-label">Hastanın Yaşı</label>
+                        <input id="age" name="age" type="text" required="required" class="form-control col-sm-12" placeholder="Enter Age" />
+                        <span asp-validation-for="age" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="gender" class="control-label">Hastanın Cinsiyeti</label>
+                        <select id="gender" name="gender" class="form-control">
+                            <option value="Male">Erkek</option>
+                            <option value="Female">Kadın</option>
+                        </select>
+                        <span asp-validation-for="gender" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="race" name="race" class="control-label">Hastanın Irkı</label>
+                        <select id="race" class="form-control" name="race">
+                            <option value="AfricanAmerican">Afro-Amerikan</option>
+                            <option value="Asian">Asyalı</option>
+                            <option value="Caucasian">Kafkas</option>
+                            <option value="Hispanic">İspanyol</option>
+                            <option value="Other">Diğer</option>
+                            <option value="Unknown">Belirtilmedi</option>
+                        </select>
+                        <span asp-validation-for="race" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="admisson_source_id" name="admisson_source_id" class="control-label">Hastayı Yönlendiren Kaynak bilgisi</label>
+                        <select id="admisson_source_id" name="admisson_source_id" class="form-control">
+                            <option value="1">Hekim Tavsiyesi</option>
+                            <option value="2">Klinik Tavsiyesi</option>
+                            <option value="3">Sağlık Yönetim Birimi tavsiyesi</option>
+                            <option value="4">Bir hastaneden sevk</option>
+                            <option value="5">Terapi merkezinden sevk</option>
+                            <option value="10">Sağlık ocağından sevk</option>
+                            <option value="6">Diğer Sağlık Kurumundan Sevk</option>
+                            <option value="7">Acil'e başvuru</option>
+                            <option value="8">Güvenlik güçleri başvurusu</option>
+                            <option value="11">Normal Doğum sonrası</option>
+                            <option value="12">erken doğum sonrası</option>
+                            <option value="13">Hasta bebek</option>
+                            <option value="14">Ekstramüral doğum sonrası</option>
+                            <option value="18">Evde Sağlık Hizmet birimi tavsiyesi</option>
+                            <option value="19">Aynı sağlık birimine readmisyon</option>
+                            <option value="22">Farklı bir şikayetle readmisyon</option>
+                            <option value="23">Hastane içinde doğum sonrası</option>
+                            <option value="24">Farklı bir hastanede doğum sonrası sevk</option>
+                            <option value="25">Cerrahi Poliklinik'ten sevk</option>
+                            <option value="26">Darülaceze'den (düşkünlerevi)sevk</option>
+                            <option value="9">Diğer</option>
+                        </select>
+                        <span asp-validation-for="admisson_source_id" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="admission_type_id" name="admission_type_id" class="control-label">Hasta Giriş Tipi</label>
+                        <select id="admission_type_id" class="form-control" name="admission_type_id">
+                            <option value="1">Emergency</option>
+                            <option value="2">Urgent</option>
+                            <option value="3">Elective</option>
+                            <option value="4">Newborn</option>
+                            <option value="5">Not Available</option>
+                            <option value="6">NULL</option>
+                            <option value="7">Trauma Center</option>
+                            <option value="8">Not Mapped</option>
+                        </select>
+                        <span asp-validation-for="admission_type_id" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="number_emergency" name="number_emergency" class="control-label">Son bir yılda acile yatırılma sayısı</label>
+                        <input id="number_emergency" name="number_emergency" maxlength="100" type="text" required="required" class="form-control" placeholder="[last year – integer value]" />
+                        <span asp-validation-for="number_emergency" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="number_inpatient" name="number_inpatient" class="control-label">Son bir yılda hastahaneye yatırılma sayısı</label>
+                        <input id="number_inpatient" name="number_inpatient" maxlength="100" type="text" required="required" class="form-control" placeholder="[last year – integer value ]" />
+                        <span asp-validation-for="number_inpatient" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="number_outpatient" name="number_outpatient" class="control-label">Son bir yılda ayakta tedavi sayısı</label>
+                        <input id="number_outpatient" name="number_outpatient" maxlength="100" type="text" required="required" class="form-control" placeholder="[last year – integer value ]" />
+                    </div>
+                    <div class="form-group">
+                        <label id="num_lab_procedures" name="num_lab_procedures" class="control-label">Lab Sayısı</label>
+                        <input id="num_lab_procedures" name="num_lab_procedures" maxlength="100" type="text" required="required" class="form-control" placeholder="[last year – integer value ]" />
+                    </div>
+                    <button class="btn btn-primary nextBtn pull-right" type="button">Sonraki</button>
+                </div>
+            </div>
+
+            <div class="panel panel-primary setup-content" id="step-2">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Encounter/Treatment Phase</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label id="num_medications" name="num_medications" class="control-label">Number of medications</label>
+                        <input id="num_medications" name="num_medications" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Number of different medications administered" />
+                        <span asp-validation-for="num_medications" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="num_procedures" name="num_procedures" class="control-label">Number of Procedures</label>
+                        <input id="num_procedures" name="num_procedures" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter  Number of lab tests" />
+                        <span asp-validation-for="num_procedures" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="number_diagnoses" name="number_diagnoses" class="control-label">Number of diagnosis</label>
+                        <input id="number_diagnoses" name="number_diagnoses" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter Number of diagnosis" />
+                        <span asp-validation-for="number_diagnoses" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="diag_1" name="diag_1" class="control-label">Diagnosis 1</label>
+                        <select id="diag_1" name="diag_1" class="form-control">
+                            <option value="428">Circulatory</option>
+                            <option value="786">Respiratory</option>
+                            <option value="577">Digestive</option>
+                            <option value="250.8">Diabetes</option>
+                            <option value="996">Injury</option>
+                            <option value="715">Musculoskeletal	</option>
+                            <option value="584">Genitourinary</option>
+                            <option value="162">Neoplasms</option>
+                            <option value="780">Other symptoms, signs, and ill-defined conditions</option>
+                            <option value="276">Endocrine, nutritional, and metabolic diseases and immunity disorders</option>
+                            <option value="682">Diseases of the skin and subcutaneous tissue</option>
+                            <option value="38">Infectious and parasitic diseases</option>
+                            <option value="296">Mental disorders</option>
+                            <option value="V57">External causes of injury and supplemental classification</option>
+                            <option value="285">Diseases of the blood and blood-forming organs</option>
+                            <option value="331">	Diseases of the nervous system</option>
+                            <option value="648">Complications of pregnancy, childbirth, and the puerperium</option>
+                            <option value="386">Diseases of the sense organs</option>
+                            <option value="756">Congenital anomalies</option>
+                        </select>
+                        <span asp-validation-for="diag_1" class="text-danger"></span>
+                    </div>
+                    <button class="btn btn-primary nextBtn pull-right" type="button">Sonraki</button>
+                </div>
+            </div>
+
+            <div class="panel panel-primary setup-content" id="step-3">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Discharge Phase</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <label id="time_in_hospital" name="time_in_hospital" class="control-label">Time in Hospital</label>
+                        <input id="time_in_hospital" name="time_in_hospital" maxlength="200" type="text" required="required" class="form-control" placeholder="Enter number of integer days between admittance and discharge" />
+                        <span id="time_in_hospital" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label id="discharge_disposition_id" name="discharge_disposition_id" class="control-label">Discharge Disposition ID</label>
+                        <select id="discharge_disposition_id" class="form-control" name="discharge_disposition_id">
+                            <option value="1">Discharged to home</option>
+                            <option value="2">Discharged/transferred to another short term hospital</option>
+                            <option value="3">Discharged/transferred to SNF</option>
+                            <option value="4">Discharged/transferred to ICF</option>
+                            <option value="5">Discharged/transferred to another type of inpatient care institution</option>
+                            <option value="6">Discharged/transferred to home with home health service</option>
+                            <option value="7">Left AMA</option>
+                            <option value="11">Expired</option>
+                            <option value="22">Discharged/transferred to another rehab fac including rehab units of a hospital</option>
+                            <option value="18">Diğer</option>
+                        </select>
+                        <span asp-validation-for="discharge_disposition_id" class="text-danger"></span>
+                    </div>
+
+                    <button class="btn btn-primary nextBtn pull-right" type="submit">Taburcu Et</button>
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
+                </div>
+            </div>
+        </form>
+    </div>
+
+}

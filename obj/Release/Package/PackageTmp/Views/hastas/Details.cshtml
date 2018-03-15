@@ -1,0 +1,162 @@
+﻿@model Zirve.Models.hasta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>hasta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.race)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.race)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.admisson_source_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admisson_source_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.admission_type_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.admission_type_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.number_emergency)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_emergency)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.number_inpatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_inpatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.number_outpatient)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_outpatient)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medical_specialty)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medical_specialty)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_medications)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_medications)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.num_procedures)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.num_procedures)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.number_diagnoses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.number_diagnoses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.diag_1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diag_1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.time_in_hospital)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.time_in_hospital)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.discharge_disposition_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.discharge_disposition_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.readmitted_dttm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.readmitted_dttm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scored_Labels)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scored_Labels)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scored_Probabilities)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scored_Probabilities)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
